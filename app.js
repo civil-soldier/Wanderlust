@@ -62,6 +62,7 @@ const sessionOptions = {
     cookie: {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',  // ensures cookie works with HTTPS on Render
+        sameSite: 'none',
         maxAge: 7 * 24 * 60 * 1000, 
     }
 };
