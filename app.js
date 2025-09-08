@@ -60,11 +60,11 @@ const sessionOptions = {
     resave : false,
     saveUninitialized : true,
     cookie: {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',  // ensures cookie works with HTTPS on Render
+        expires: Date.now() + 7 * 24 * 60 * 1000,
         sameSite: 'none',
+        httpOnly: true,
         maxAge: 7 * 24 * 60 * 1000, 
-    }
+    },
 };
 
 app.use(session(sessionOptions));
