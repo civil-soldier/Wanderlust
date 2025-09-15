@@ -241,3 +241,281 @@ body {
     max-height: 200px;
     overflow-y: auto;
 }
+
+.review-box {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.review-box .starability-result {
+  font-size: 1rem;   /* normal size stars for desktop */
+  line-height: 1.3;
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+/* Tablet screens: 768px — 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* slightly tuned typography for tablets */
+  body {
+    font-size: 15.5px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar {
+    height: 4.75rem;
+    padding: 0 1rem;
+  }
+
+  .fa-compass {
+    font-size: 1.9rem;
+  }
+
+  .f-info {
+    height: auto;
+    padding: 0.75rem 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .f-info-links,
+  .f-info-socials,
+  .f-info-brand {
+    justify-content: center;
+  }
+
+  .preview-img {
+    width: 320px;
+    max-width: 100%;
+    height: 200px;
+  }
+
+  #map {
+    width: 100%;
+    max-width: 900px;
+    height: 350px;
+  }
+
+  #filters {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .tax-toggle {
+    margin-left: auto; /* push toggle to the right on tablet */
+    margin-top: 1.2rem;
+  }
+
+  .search-inp {
+    padding: 0.5rem 3rem;
+    font-size: 0.95rem;
+  }
+
+  .search-btn {
+    padding: 0 1rem;
+  }
+
+  .card-img-top {
+    height: auto;
+  }
+}
+
+/* Mobile phones: up to 767px */
+@media (max-width: 767px) {
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Search input full width */
+  .search-inp {
+    flex: 1 1 100%;
+    margin: 0.5rem 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    order: 2;
+  }
+
+  .search-btn {
+    order: 3;
+    margin-top: 0.25rem;
+    width: 100%;
+    border-radius: 20px;
+    padding: 0.5rem 0;
+  }
+
+  /* Toggler */
+  .navbar-toggler {
+    order: 1;
+    margin-left: auto;
+  }
+
+  /* Compass logo */
+  .fa-compass {
+    font-size: 1.6rem;
+    order: 0;
+  }
+
+  /* Filters */
+  #filters {
+    margin-top: 0.75rem;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    margin: 0;
+    text-align: center;
+  }
+
+  .show-container {
+    padding: 0.5rem;
+  }
+
+  /* Listing image */
+  .show-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Titles & details */
+  .show-container h1,
+  .show-container h2,
+  .show-container h3,
+  .show-container p {
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  /* Buttons */
+  .edit-btn,
+  .delete-btn {
+    width: auto;
+    padding: 0.5rem 1.5rem;
+    display: inline-block;
+  }
+  .edit-btn { margin-right: 0.5rem; }
+
+  /* Review form */
+  .review-form {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .review-form input,
+  .review-form textarea,
+  .review-form button {
+    width: 100%;
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  /* Reviews layout */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .row .review-box {
+    flex: 0 0 48%;
+    max-width: 48%;
+    margin: 1% !important;
+  }
+
+  .review-box .card-body {
+    padding: 0.6rem;
+  }
+
+  .review-box .card-title {
+    font-size: 0.9rem;
+  }
+
+  .review-box .card-text {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  /* Shrink stars */
+  .starability-result,
+  .starability-slot {
+    font-size: 0.8rem;
+    transform: scale(0.6);
+    transform-origin: left center;
+  }
+
+  /* Map */
+  #map {
+    width: 100%;
+    height: 250px;
+    margin-top: 1rem;
+    border-radius: 8px;
+  }
+
+  /* Footer */
+  footer {
+    width: 100%;
+    background: #f8f8f8;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 2rem;
+  }
+
+  footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Very small phones (narrow screens) */
+@media (max-width: 420px) {
+  body {
+    font-size: 13.5px;
+  }
+
+  .fa-compass {
+    font-size: 1.4rem;
+  }
+
+  .preview-img {
+    height: auto;
+  }
+
+  .tax-toggle {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+}
