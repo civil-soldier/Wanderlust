@@ -48,8 +48,7 @@ const listingSchema = new mongoose.Schema({
   "Cabin",
   "Mountains",
   "Castles",
-  "Arctic",
-  "Villa"],
+  "Arctic"],
     required: true,
   },
 });

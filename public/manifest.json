@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "Wanderlust",
+  "short_name": "Wanderlust",
+  "description": "Wanderlust is a dynamic platform that connects travelers with hosts offering unique accommodations around the globe. Users can explore a wide variety of listings, from rustic cabins to city apartments, and create their own listings to share their spaces with the world. The application includes key features like user authentication, property management, and a robust review system to build a trusted community. Built with Node.js and MongoDB, Wanderlust provides a seamless, secure, and user-friendly experience for both travelers and hosts.",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen"],
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

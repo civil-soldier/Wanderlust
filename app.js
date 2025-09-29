@@ -98,9 +98,21 @@ app.get("/demouser", async(req , res) => {
     res.send(registeredUser);
 });
 
+
+
 app.use("/listings" , listingRouter);
 app.use('/listings/:id/reviews', reviewRouter);
 app.use('/', userRouter);
+
+// Privacy Policy Page
+app.get("/privacy", (req, res) => {
+    res.render("privacy");
+});
+
+// Terms & Conditions Page
+app.get("/terms", (req, res) => {
+    res.render("terms");
+});
 
 //error route
 app.use((err , req , res , next) => {

@@ -14,7 +14,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
   <link rel="icon" href="/favicon/favicon.ico">
   
     <link 
@@ -31,7 +30,7 @@
     <link href="/css/rating.css" rel="stylesheet">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
-<link 
+<link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <%- include("../includes/navbar.ejs") %>
@@ -48,5 +47,6 @@
     <script src="/js/script.js"></script>
     <script src="/js/taxToggle.js"></script>
     <script src="/js/searchSuggestions.js"></script>
+    <script src="/js/register-sw.js"></script>
 </body>
 </html>
