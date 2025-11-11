@@ -34,17 +34,23 @@
         <div class="invalid-feedback">Please enter a short description</div>
       </div>
 
-      <!-- Image -->
-      <div class="mb-3">
-        <label for="image" class="form-label">Upload Listing Image</label>
-        <input
-          type="file"
-          name="listing[image]"
-          id="image"
-          class="form-control"
-          required
-        >
-      </div>
+<!-- Images -->
+<div class="mb-3">
+  <label for="images" class="form-label">Upload 1–5 Images</label>
+  <input
+    type="file"
+    name="images"
+    id="images"
+    class="form-control"
+    multiple
+    accept="image/*"
+    required
+  >
+  <small class="text-muted">You can select multiple images (up to 5).</small>
+  <small class="text-muted">Hold Ctrl (or Cmd on Mac) to select multiple images.</small>
+
+</div>
+
 
       <!-- Price & Country -->
       <div class="row">

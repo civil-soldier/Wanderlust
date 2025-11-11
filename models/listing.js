@@ -9,10 +9,12 @@ const listingSchema = new mongoose.Schema({
     required: true,
   },
   description: String,
-  image: {
+  images: [
+    {
     url: String,
     filename: String,
-   },
+   }
+  ],
   price: Number,
   location: String,
   country: String,
