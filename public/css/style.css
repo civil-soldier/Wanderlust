@@ -534,6 +534,53 @@ body {
   overflow: hidden;
 }
 
+/* Add Mobile Overrides for Collage */
+@media (max-width: 767px) {
+    .airbnb-collage {
+        /* 1. Remove grid columns and fixed height */
+        grid-template-columns: 1fr; /* Single column */
+        grid-template-rows: auto;
+        height: auto; 
+        gap: 0; /* Remove gap in the main container for stacking */
+        border-radius: 8px; /* Smaller radius for mobile */
+    }
+
+    /* 2. Main Image takes full width */
+    .main-image {
+        grid-row: auto;
+        grid-column: 1;
+        height: 250px; /* Define a responsive height */
+        overflow: hidden;
+        border-radius: 8px 8px 0 0 !important; /* Top corners rounded */
+    }
+    .airbnb-collage .main-image .landscape-img {
+        border-radius: 8px 8px 0 0 !important; /* Ensure image corners match */
+    }
+
+    /* 3. Side images stack below the main image */
+    .side-images {
+        grid-column: 1;
+        grid-row: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Keep 2 columns within the side-images block */
+        grid-template-rows: auto;
+        gap: 4px; /* Smaller gap between side images */
+        padding: 4px; /* Add some padding around the side images block */
+        background-color: #f7f7f7; /* Optional: differentiate side images block */
+        border-radius: 0 0 8px 8px; /* Bottom corners rounded */
+    }
+    
+    /* Reset specific corner radii for mobile stacking */
+    .side-images > .side-img, 
+    .side-images > .overlay-tile {
+        border-radius: 0 !important;
+        height: 120px; /* Fixed height for small tiles */
+    }
+    .side-images .landscape-img {
+        border-radius: 0 !important;
+    }
+}
+
 /* 1. Main image spans both rows on the left */
 .main-image {
   grid-row: 1 / span 2;
@@ -769,4 +816,132 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Single Image Layout Styling --- */
+.single-landscape {
+    /* The container itself must be hidden for border-radius to work on the image */
+    overflow: hidden;
+    
+    /* Apply the full collage height */
+    height: 468px; 
+    
+    /* Apply the full border radius */
+    border-radius: 12px;
+}
+
+/* Ensure the image inside the container fills it completely */
+.single-landscape .landscape-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Important: The image inside must also have the radius if any other rule removes it */
+    border-radius: 12px;
+}
+
+/* Optional: Mobile adjustment */
+@media (max-width: 767px) {
+    .single-landscape {
+        height: 280px; /* Shorter height for mobile viewing */
+        border-radius: 8px; /* Smaller radius for mobile */
+    }
+    .single-landscape .landscape-img {
+        border-radius: 8px;
+    }
+}
+
+/* --- Mobile Overrides for Image Collage (Add/Update this in style.css) --- */
+@media (max-width: 767px) {
+    /* Main collage container adjustments */
+    .airbnb-collage {
+        /* Remove fixed grid columns and rows from desktop */
+        grid-template-columns: 1fr; /* Single column */
+        grid-template-rows: auto;   /* Auto height */
+        height: auto;               /* Remove fixed height */
+        gap: 0;                     /* Reset main gap */
+        border-radius: 8px;         /* Uniform border radius for the whole collage block */
+        overflow: hidden;           /* Crucial for corner rounding */
+    }
+
+    /* 1. Main image goes to the top, takes full width of the collage container */
+    .main-image {
+        grid-row: auto; /* Allow auto placement */
+        grid-column: 1; /* Take the single column */
+        height: 250px; /* Fixed height for the main image on mobile */
+        overflow: hidden;
+        /* Apply top-left and top-right radius to the main image */
+        border-radius: 8px 8px 0 0; 
+    }
+    .airbnb-collage .main-image .landscape-img {
+        /* Ensure the image itself also has the top-left/right radius */
+        border-radius: 8px 8px 0 0;
+    }
+
+    /* 2. Side images container now sits below the main image */
+    .side-images {
+        grid-column: 1; /* Take the single column below the main image */
+        grid-row: auto; /* Allow auto placement */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Maintain 2x2 grid for side images */
+        grid-template-rows: repeat(2, 120px); /* Fixed height for each row of side images */
+        gap: 4px; /* Small gap between side images */
+        padding: 4px; /* Padding around the 2x2 grid */
+        background-color: #f7f7f7; /* Optional: A slight background for the side image block */
+        /* Apply bottom-left and bottom-right radius to the side images block */
+        border-radius: 0 0 8px 8px; 
+    }
+    
+    /* Reset all individual side image border radii */
+    .side-images > div {
+        border-radius: 0 !important; /* Remove any specific radii from desktop rules */
+        overflow: hidden;
+    }
+    .side-images > div .landscape-img {
+        border-radius: 0 !important; /* Ensure images themselves are not rounded internally */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Ensure specific corners are rounded for the side-images block, if needed */
+    /* If the side-images container has the overall bottom radius, individual images don't need it. */
+    /* If you still need individual bottom images to have radius, apply here. */
+    .side-images > .side-img:nth-child(3) { /* Third image (bottom-left) */
+        border-bottom-left-radius: 8px !important;
+    }
+    .side-images > .side-img:nth-child(4),
+    .side-images > .overlay-tile { /* Fourth image (bottom-right) or overlay */
+        border-bottom-right-radius: 8px !important;
+    }
+    .side-images > .side-img:nth-child(3) .landscape-img {
+        border-bottom-left-radius: 8px !important;
+    }
+    .side-images > .side-img:nth-child(4) .landscape-img,
+    .side-images > .overlay-tile .landscape-img {
+        border-bottom-right-radius: 8px !important;
+    }
+
+    /* Make sure overlay tile text is centered and visible */
+    .overlay-tile .overlay-text {
+        font-size: 1rem;
+    }
+    
+    /* Adjust map dimensions on mobile if needed */
+    #map {
+        height: 250px; /* Reduced height for map on mobile */
+    }
+
+    /* Adjust the offset and padding for the main title and general content */
+    .row.mt-3 > .col-6.offset-3.text-center {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 15px; /* Add horizontal padding */
+        text-align: left; /* Align title left on mobile */
+    }
+    
+    .col-10.offset-1.mb-4 {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 15px; /* Add horizontal padding to the image collage container */
+    }
 }
