@@ -7,7 +7,7 @@ It connects **owners** who want to rent their properties with **travelers** sear
 
 The platform leverages **Node.js**, **Express.js**, **MongoDB**, **EJS**, **Bootstrap**, and **Cloudinary**, and includes **Progressive Web App (PWA)** features for an installable, offline-ready experience.
 
-[🌐 Live Demo]((https://wanderlust-2-l64v.onrender.com))
+[🌐 Live Demo](https://wanderlust-2-l64v.onrender.com)
 
 ---
 
